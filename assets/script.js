@@ -1,56 +1,27 @@
-// // Assignment Code
-// var generateBtn = document.querySelector("#generate");
-
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-const generateBtn = document.getElementById('generate');
-
-
-const randomFunc = {
-  upper: randomUpperCase,
-  lower: randomLowerCase,
-  special: randomSpecial,
-  number: randomNumber
-};
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", () => {
-  const length = +generateBtn.value;
+generateBtn.addEventListener("click", writePassword);
 
-  console.log(typeof length);
-});
+// Arrays
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var specialChar = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "~"];
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 
 
-// function
-function randomUpperCase() {
-  const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  return upper[Math.floor(Math.random() * upper.length)];
+
+
+
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  
+  passwordText.value = password;
+
 }
-
-function randomLowerCase() {
-  const lower = 'abcdefghijklmnopqrstuvwxyz';
-  return lower[Math.floor(Math.random() * lower.length)];
-}
-
-function randomSpecial() {
-  const special = '!"#$%&*+,-./:;<=>?@[\]^_`{|}~';
-  return special[Math.floor(Math.random() * special.length)];
-}
-
-function randomNumber() {
-  const number = '0123456789';
-  return number[Math.floor(Math.random() * number.length)];
-}
-
-console.log(randomNumber());
-
-
