@@ -38,19 +38,19 @@ function generatePassword() {
     var pwCharacters = []; // empty array for the concatenated arrays below to be passed into
   
   if(pwUpperCase) {
-    pwCharacters = pwCharacters.concat(pwUpperCase);
+    pwCharacters = pwCharacters.concat(upperCase);
   }  
 
   if(pwLowerCase) {
-    pwCharacters = pwCharacters.concat(pwLowerCase);
+    pwCharacters = pwCharacters.concat(lowerCase);
   }
 
   if(pwSpecial) {
-    pwCharacters = pwCharacters.concat(pwSpecial);
+    pwCharacters = pwCharacters.concat(special);
   }
 
   if(pwNumber) {
-    pwCharacters = pwCharacters.concat(pwNumber);
+    pwCharacters = pwCharacters.concat(number);
   }
 
   console.log(pwCharacters);
@@ -58,10 +58,9 @@ function generatePassword() {
     var completePassword = ""; // empty string for the results of the below randomizer to be passed through to
   
     for (var i = 0; i < pwLength; i++) {
-      completePassword = completePassword + pwCharacters[Math.floor(Math.random() * pwCharacters.lenth)];
+      completePassword = completePassword + pwCharacters[Math.floor(Math.random() * pwCharacters.length)];
     }
     return completePassword;
-
 }
 
 // Arrays
@@ -69,16 +68,6 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "~"];
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-// Variables
-var pwLength = "";
-var pwUpperCase;
-var pwLowerCase;
-var pwSpecial;
-var pwNumber;
-
-
-
 
 // Write password to the #password input
 function writePassword() {
