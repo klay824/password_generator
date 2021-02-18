@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
 
-
+// Prompts and loops
 function generatePassword() {
   var pwLength = (prompt("How many characerters would you like your password to be?"));
 
@@ -23,10 +23,46 @@ function generatePassword() {
   var pwSpecial = (confirm("Would you like your password to contain special characters? OK for yes; Cancel for No."));
 
   var pwNumber = (confirm("Would you like your password to contain numbers? OK for yes; Cancel for No."));
-    
+
+    if(pwUpperCase === false && pwLowerCase === false && pwSpecial === false && pwNumber === false) {
+      alert("You must select at least one of the following: \r\n Uppercase, Lowercase, Special Character, or Number.");
+      var pwUpperCase = (confirm("Would you like your password to contain uppercase letters? OK for yes; Cancel for No."));
+      
+      var pwLowerCase = (confirm("Would you like your password to contain lowercase letters? OK for yes; Cancel for No."));
+
+      var pwSpecial = (confirm("Would you like your password to contain special characters? OK for yes; Cancel for No."));
+
+      var pwNumber = (confirm("Would you like your password to contain numbers? OK for yes; Cancel for No."));
+    }
+  
+    var pwCharacters = []; // empty array for the concatenated arrays below to be passed into
+  
+  if(pwUpperCase) {
+    pwCharacters = pwCharacters.concat(pwUpperCase);
+  }  
+
+  if(pwLowerCase) {
+    pwCharacters = pwCharacters.concat(pwLowerCase);
+  }
+
+  if(pwSpecial) {
+    pwCharacters = pwCharacters.concat(pwSpecial);
+  }
+
+  if(pwNumber) {
+    pwCharacters = pwCharacters.concat(pwNumber);
+  }
+
+  console.log(pwCharacters);
+
+    var completePassword = ""; // empty string for the results of the below randomizer to be passed through to
+  
+    for (var i = 0; i < pwLength; i++) {
+      completePassword = completePassword + pwCharacters[Math.floor(Math.random() * pwCharacters.lenth)];
+    }
+    return completePassword;
+
 }
-
-
 
 // Arrays
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
