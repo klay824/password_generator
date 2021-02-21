@@ -7,4 +7,4 @@ Upon chosing a number between the parameters, the user will be asked if they wan
 After the user has chosen at least one parameter, the program will generate a password using the random parameters the user chose and output it to the HTML.
 
 <h2>Video Capture</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PYXwvAnhI60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Password Generator](video-capture.gif)
